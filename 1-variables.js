@@ -13,7 +13,12 @@
 
    Every function has a DIFFERENT name, so all answers live here.
    ============================================================ */
-
+   let exerciseNum = 1;
+  function exercise()
+  {
+    console.log( "=========Дасгал-1========= : " + exerciseNum)
+    exerciseNum = exerciseNum + 1;
+  }
 // ----- 1. Running total -----
 // Write `runningTotal()` (no input). Start let sum = 0, add 8, add 8,
 // subtract 1, then RETURN sum.
@@ -23,6 +28,7 @@
     let sum = 0
     return sum + 8 + 8 -1
   }
+  exercise();
   console.log(runningTotal());
   console.log(runningTotal() + 5);
   console.log(runningTotal() * 2);
@@ -35,7 +41,14 @@
 // Write `swapLabel(a, b)` that RETURNS b + "-" + a (the two joined,
 // swapped, with a dash between).
 // your code here
-
+  function swapLabel(a,b)
+  {
+    return b + "-" + a
+  }
+  exercise();
+  console.log(swapLabel("left", "right"));
+  console.log(swapLabel("1", "2"));
+  console.log(swapLabel("a", "b"));
 // console.log(swapLabel("left", "right"));
 // TEST 1:  swapLabel("left", "right")  ->  "right-left"
 // TEST 2:  swapLabel("1", "2")         ->  "2-1"
@@ -44,7 +57,15 @@
 // ----- 3. Triple then bump -----
 // Write `tripleBump(n)`. Set let x = n * 3, then add 1 to x, then RETURN x.
 // your code here
-
+function tripleBump(n)
+{
+  let x = n * 3;
+  return x + 1;
+}
+  exercise();
+  console.log(tripleBump(4));
+  console.log(tripleBump(0));
+  console.log(tripleBump(10));
 // console.log(tripleBump(4));
 // TEST 1:  tripleBump(4)   ->  13
 // TEST 2:  tripleBump(0)   ->  1
@@ -53,7 +74,14 @@
 // ----- 4. Full name -----
 // Write `fullName(first, last)` that RETURNS the two joined with one space.
 // your code here
-
+  function fullName(first,last)
+  {
+    return first+ " " +last
+  }
+  exercise();
+  console.log(fullName("Ada", "Lovelace"));
+  console.log(fullName("Sam", "Lee"));
+  console.log(fullName("A", "B"));
 // console.log(fullName("Ada", "Lovelace"));
 // TEST 1:  fullName("Ada", "Lovelace")  ->  "Ada Lovelace"
 // TEST 2:  fullName("Sam", "Lee")       ->  "Sam Lee"
@@ -63,7 +91,15 @@
 // Write `withTax(price)`. Use const TAX = 0.1, then RETURN price plus
 // price * TAX.
 // your code here
-
+  function withTax(price)
+  {
+    const TAX = 0.1
+    return price + (price * TAX)
+  }
+  exercise();
+  console.log(withTax(100));
+  console.log(withTax(50));
+  console.log(withTax(0));
 // console.log(withTax(100));
 // TEST 1:  withTax(100)  ->  110
 // TEST 2:  withTax(50)   ->  55
@@ -72,7 +108,18 @@
 // ----- 6. Count up by one, three times -----
 // Write `countUp3(start)`. Set let c = start, then c++ three times, RETURN c.
 // your code here
-
+  function countUp3(start)
+  {
+    let c = start
+    c++
+    c++
+    c++
+    return c
+  }
+  exercise();
+  console.log(countUp3(7));
+  console.log(countUp3(0));
+  console.log(countUp3(-3));
 // console.log(countUp3(7));
 // TEST 1:  countUp3(7)   ->  10
 // TEST 2:  countUp3(0)   ->  3
@@ -81,7 +128,14 @@
 // ----- 7. Average of two -----
 // Write `avgTwo(a, b)` that RETURNS the average of a and b.
 // your code here
-
+  function avgTwo(a,b)
+  {
+    return Math.round ((a+b)/2)
+  }
+  exercise();
+  console.log(avgTwo(4, 8));
+  console.log(avgTwo(10, 20));
+  console.log(avgTwo(3, 3));
 // console.log(avgTwo(4, 8));
 // TEST 1:  avgTwo(4, 8)    ->  6
 // TEST 2:  avgTwo(10, 20)  ->  15
@@ -91,7 +145,15 @@
 // Write `doubleArea(w, h)`. Set let area = w * h, then reassign
 // area = area * 2, RETURN area.
 // your code here
-
+  function doubleArea(w,h)
+  {
+    let area = w * h
+    return area = area * 2
+  }
+  exercise();
+  console.log(doubleArea(3, 4));
+  console.log(doubleArea(5, 2));
+  console.log(doubleArea(1, 1));
 // console.log(doubleArea(3, 4));
 // TEST 1:  doubleArea(3, 4)  ->  24
 // TEST 2:  doubleArea(5, 2)  ->  20

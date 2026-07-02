@@ -9,10 +9,22 @@
    Each exercise: 3 TEST CASES, INPUT -> EXACT RETURN value.
    ============================================================ */
 
+let exerciseNumTwo = 1;
+function exercise() {
+  console.log("=========Дасгал-2========= : " + exerciseNumTwo);
+  exerciseNumTwo++;
+}
+
 // ----- 1. What type is it? -----
 // Write `whatType(value)` that RETURNS the typeof string of value.
 // your code here
-
+function whatType(value) {
+  return typeof value;
+}
+exercise();
+console.log(whatType(42));
+console.log(whatType("hi"));
+console.log(whatType(true));
 // console.log(whatType(42));
 // TEST 1:  whatType(42)      ->  "number"
 // TEST 2:  whatType("hi")    ->  "string"
@@ -21,7 +33,14 @@
 // ----- 2. String to number -----
 // Write `toNumber(text)` that RETURNS text turned into a real number.
 // your code here
-
+   function toNumber(text)
+   {
+      return Number(text)
+   }
+   exercise();
+   console.log(toNumber("42"));
+   console.log(toNumber("7")+1);
+   console.log(toNumber("100")*2);
 // console.log(toNumber("42"));
 // TEST 1:  toNumber("42")        ->  42
 // TEST 2:  toNumber("7") + 1     ->  8
@@ -30,7 +49,14 @@
 // ----- 3. Number to string -----
 // Write `toText(n)` that RETURNS n turned into a string.
 // your code here
-
+   function toText(n)
+   {
+      return String(n)
+   }
+   exercise();
+   console.log(toText(42));
+   console.log(typeof toText(5));
+   console.log(toText(9) + "!");
 // console.log(toText(42));
 // TEST 1:  toText(42)            ->  "42"
 // TEST 2:  typeof toText(5)      ->  "string"
@@ -40,7 +66,16 @@
 // Write `mix(a, b)` where a is a number and b is a string. RETURN a + b.
 // (Find out what JS does when you add a number to a string.)
 // your code here
-
+   function mix(a,b)
+   {
+      Number(a)
+      String(b)
+      return a + b
+   }
+   exercise();
+   console.log(mix(5, "5"));
+   console.log(mix(1, "0"));
+   console.log(typeof mix(2, "x"));
 // console.log(mix(5, "5"));
 // TEST 1:  mix(5, "5")       ->  "55"
 // TEST 2:  mix(1, "0")       ->  "10"
@@ -50,7 +85,21 @@
 // Write `isRealNumber(text)` that RETURNS true if Number(text) is a valid
 // number, false if it is NaN.
 // your code here
-
+function isRealNumber(text)
+{
+      if (typeof Number(text) === "number")
+      {
+         return true
+      }
+      else 
+      {
+         return false
+      }
+}
+   exercise();
+   console.log(isRealNumber("42"));
+   console.log(isRealNumber("hello"));
+   console.log(isRealNumber("3.14"));
 // console.log(isRealNumber("42"));
 // TEST 1:  isRealNumber("42")    ->  true
 // TEST 2:  isRealNumber("hello") ->  false
@@ -60,7 +109,14 @@
 // Write `asBoolean(value)` that RETURNS value turned into a true/false
 // with Boolean(value).
 // your code here
-
+   function asBoolean(value)
+   {
+      return Boolean(value)
+   }
+   exercise();
+   console.log(asBoolean(0));
+   console.log(asBoolean(1));
+   console.log(asBoolean(""));
 // console.log(asBoolean(0));
 // TEST 1:  asBoolean(0)    ->  false
 // TEST 2:  asBoolean(1)    ->  true
@@ -69,7 +125,20 @@
 // ----- 7. Undefined check -----
 // Write `isMissing(value)` that RETURNS true when value is undefined.
 // your code here
-
+   function isMissing(value)
+   {
+      if (value === undefined)
+      {
+         return true
+      }
+      else {
+         return false
+      }
+   }
+   exercise();
+   console.log(isMissing(undefined));
+   console.log(isMissing(0));
+   console.log(isMissing("x"));
 // console.log(isMissing(undefined));
 // TEST 1:  isMissing(undefined)  ->  true
 // TEST 2:  isMissing(0)          ->  false
@@ -79,7 +148,15 @@
 // Write `firstDigitType(n)`. Turn n into a string, take its first
 // character, RETURN the typeof that character.
 // your code here
-
+   function firstDigitType(n)
+   {
+      let turn = String(n)
+      return typeof turn;
+   }
+   exercise();
+   console.log(firstDigitType(42));
+   console.log(firstDigitType(7));
+   console.log(firstDigitType(900));
 // console.log(firstDigitType(42));
 // TEST 1:  firstDigitType(42)   ->  "string"
 // TEST 2:  firstDigitType(7)    ->  "string"

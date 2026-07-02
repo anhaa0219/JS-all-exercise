@@ -9,10 +9,26 @@
    Each exercise: 3 TEST CASES, INPUT -> EXACT RETURN value.
    ============================================================ */
 
+
+
+
+
+   let exerciseNum5 = 1;
+function exercise() {
+  console.log("=========Дасгал-3========= : " + exerciseNum5);
+  exerciseNum5++;
+}
 // ----- 1. Shout it -----
 // Write `shout(text)` that RETURNS text in ALL CAPS.
 // your code here
-
+   function shout(text)
+   {
+      return text.toUpperCase()
+   }
+   exercise();
+   console.log(shout("hi"));
+   console.log(shout("Code"));
+   console.log(shout("a"));
 // console.log(shout("hi"));
 // TEST 1:  shout("hi")     ->  "HI"
 // TEST 2:  shout("Code")   ->  "CODE"

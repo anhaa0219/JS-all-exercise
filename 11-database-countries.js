@@ -134,7 +134,7 @@ const countries = [
 function countCountries(db) {
   return db.length;
 }
-console.log(countCountries(countries)); // 100
+//sconsole.log(countCountries(countries)); // 100
 // TEST 1:  countCountries(countries)        ->  100
 // TEST 2:  countCountries([])               ->  0
 // TEST 3:  countCountries([countries[0]])   ->  1

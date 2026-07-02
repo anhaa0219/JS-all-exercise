@@ -8,10 +8,25 @@
    Each exercise: 3 TEST CASES, INPUT -> EXACT RETURN value.
    ============================================================ */
 
+let exerciseNum4 = 1;
+function exercise() {
+  console.log("=========Дасгал-3========= : " + exerciseNum4);
+  exerciseNum4++;
+}
 // ----- 1. Pass or fail -----
 // Write `passFail(score)` that RETURNS "Pass" when score >= 60, else "Fail".
 // your code here
-
+function passFail(score) {
+  if (score >= 60) {
+    return "Pass";
+  } else {
+    return "Fail";
+  }
+}
+exercise();
+console.log(passFail(72));
+console.log(passFail(60));
+console.log(passFail(40));
 // console.log(passFail(72));
 // TEST 1:  passFail(72)  ->  "Pass"
 // TEST 2:  passFail(60)  ->  "Pass"
@@ -20,7 +35,19 @@
 // ----- 2. Sign of a number -----
 // Write `signOf(n)` that RETURNS "positive", "negative", or "zero".
 // your code here
-
+function signOf(n) {
+  if (n > 0) {
+    return "positive";
+  } else if (n < 0) {
+    return "negative";
+  } else {
+    return "zero";
+  }
+}
+exercise();
+console.log(signOf(-4));
+console.log(signOf(0));
+console.log(signOf(9));
 // console.log(signOf(-4));
 // TEST 1:  signOf(-4)  ->  "negative"
 // TEST 2:  signOf(0)   ->  "zero"
@@ -29,7 +56,23 @@
 // ----- 3. Letter grade -----
 // Write `grade(score)`: 90+ "A", 80-89 "B", 70-79 "C", below 70 "F".
 // your code here
-
+function grade(score) {
+  if (score >= 90) {
+    return "A";
+  } else if (score >= 80) {
+    return "B";
+  } else if (score >= 70) {
+    return "C";
+  } else if (score >= 60) {
+    return "D";
+  } else {
+    return "F";
+  }
+}
+exercise();
+console.log(grade(95));
+console.log(grade(85));
+console.log(grade(50));
 // console.log(grade(85));
 // TEST 1:  grade(95)  ->  "A"
 // TEST 2:  grade(85)  ->  "B"
@@ -38,7 +81,19 @@
 // ----- 4. Bigger of two -----
 // Write `bigger(a, b)` that RETURNS the larger, or "equal" when they match.
 // your code here
-
+function bigger(a, b) {
+  if (a > b) {
+    return a;
+  } else if (b > a) {
+    return b;
+  } else {
+    return "equal";
+  }
+}
+exercise();
+console.log(bigger(14, 9));
+console.log(bigger(3, 8));
+console.log(bigger(5, 5));
 // console.log(bigger(14, 9));
 // TEST 1:  bigger(14, 9)  ->  14
 // TEST 2:  bigger(3, 8)   ->  8
@@ -47,7 +102,19 @@
 // ----- 5. Ticket price -----
 // Write `ticketPrice(age)`: under 12 -> 5, 12 to 64 -> 12, 65+ -> 8.
 // your code here
-
+function ticketPrice(age) {
+  if (age < 12) {
+    return 5;
+  } else if (age < 64) {
+    return 12;
+  } else {
+    return 8;
+  }
+}
+exercise();
+console.log(ticketPrice(8));
+console.log(ticketPrice(30));
+console.log(ticketPrice(70));
 // console.log(ticketPrice(70));
 // TEST 1:  ticketPrice(8)   ->  5
 // TEST 2:  ticketPrice(30)  ->  12
@@ -57,8 +124,22 @@
 // Write `light(color)`: "green" -> "Go", "yellow" -> "Slow", "red" -> "Stop",
 // anything else -> "Invalid".
 // your code here
-
-// console.log(light("red"));
+function light(color) {
+  if (color === "green") {
+    return "Go";
+  } else if (color === "yellow") {
+    return "Slow";
+  } else if (color === "red") {
+    return "Stop";
+  } else {
+    return "Invalid";
+  }
+}
+exercise();
+console.log(light("green"));
+console.log(light("red"));
+console.log(light("purple"));
+// console.log(light("red") );
 // TEST 1:  light("green")   ->  "Go"
 // TEST 2:  light("red")     ->  "Stop"
 // TEST 3:  light("purple")  ->  "Invalid"
@@ -67,7 +148,21 @@
 // Write `fizzbuzz(n)`: divisible by 3 and 5 -> "FizzBuzz", by 3 -> "Fizz",
 // by 5 -> "Buzz", else the number n itself.
 // your code here
-
+function fizzbuzz(n) {
+  if (n % 3 === 0 && n % 5 === 0) {
+    return "FizzBuzz";
+  } else if (n % 3 === 0 && n % 5 !== 0) {
+    return "Fizz";
+  } else if (n % 3 !== 0 && n % 5 === 0) {
+    return "Buzz";
+  } else {
+      return n;
+  }
+}
+exercise();
+console.log(fizzbuzz(15));
+console.log(fizzbuzz(9));
+console.log(fizzbuzz(7));
 // console.log(fizzbuzz(15));
 // TEST 1:  fizzbuzz(15)  ->  "FizzBuzz"
 // TEST 2:  fizzbuzz(9)   ->  "Fizz"
@@ -77,17 +172,48 @@
 // Write `clothes(temp)`: above 28 -> "Shorts", 15 to 28 -> "Jacket",
 // below 15 -> "Coat".
 // your code here
-
+   function clothes(temp)
+   {
+      if(temp > 28)
+      {
+         return "Shorts"
+      }
+      else if (temp < 28 && temp >15)
+      {
+         return "Jacket"
+      }
+      else {
+         return "Coat"
+      }
+   }
+   exercise();
+   console.log(clothes(30));
+   console.log(clothes(20));
+   console.log(clothes(5));
 // console.log(clothes(30));
 // TEST 1:  clothes(30)  ->  "Shorts"
 // TEST 2:  clothes(20)  ->  "Jacket"
 // TEST 3:  clothes(5)   ->  "Coat"
-
+   
 // ----- 9. Login result -----
 // Write `login(user, pass)` that RETURNS "Welcome" when user is "admin"
 // AND pass is "1234", otherwise "Denied".
 // your code here
-
+   function login(user,pass)
+   {
+      if (user === "admin" && pass === "1234")
+      {
+         return "Welcome"
+      }
+      else 
+      {
+         return "Denied"
+      }
+   }
+   exercise();
+   console.log(login("admin", "1234"));
+   console.log(login("admin", "0000"));
+   console.log(login("guest", "1234"));
 // console.log(login("admin", "1234"));
 // TEST 1:  login("admin", "1234")  ->  "Welcome"
 // TEST 2:  login("admin", "0000")  ->  "Denied"
@@ -96,6 +222,21 @@
 // ----- 10. Absolute value -----
 // Write `absValue(n)` that RETURNS n when n >= 0, otherwise -n.
 // your code here
+function absValue(n)
+{
+   if (n>=0)
+   {
+      return n
+   }
+   else 
+   {
+      return -n
+   }
+}
+   exercise();
+    console.log(absValue(-7));
+     console.log(absValue(7));
+      console.log(absValue(0));
 
 // console.log(absValue(-7));
 // TEST 1:  absValue(-7)  ->  7
