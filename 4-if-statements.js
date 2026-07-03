@@ -10,7 +10,7 @@
 
 let exerciseNum4 = 1;
 function exercise() {
-  console.log("=========Дасгал-3========= : " + exerciseNum4);
+  console.log("=========Дасгал-4========= : " + exerciseNum4);
   exerciseNum4++;
 }
 // ----- 1. Pass or fail -----

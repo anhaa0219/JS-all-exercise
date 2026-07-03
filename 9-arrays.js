@@ -10,10 +10,25 @@
    Each exercise: 3 TEST CASES, INPUT -> EXACT RETURN value.
    ============================================================ */
 
+
+
+
+   let exerciseNum9 = 1;
+function exercise() {
+  console.log("=========Дасгал-8========= : " + exerciseNum9);
+  exerciseNum9++;
+}
 // ----- 1. First item -----
 // Write `firstItem(arr)` that RETURNS the item at index 0.
 // your code here
-
+   function firstItem(arr)
+   {
+      return arr[0];
+   }
+   exercise();
+   console.log(firstItem([10, 20, 30]));
+   console.log(firstItem(["a", "b"]));
+   console.log(firstItem([7]));
 // console.log(firstItem([10, 20, 30]));
 // TEST 1:  firstItem([10, 20, 30])  ->  10
 // TEST 2:  firstItem(["a", "b"])    ->  "a"
@@ -22,7 +37,14 @@
 // ----- 2. Sum all -----
 // Write `sumAll(arr)` (numbers) that RETURNS the total of every item.
 // your code here
-
+   function sumAll(arr)
+   {
+      return arr.reduce(function (sum,arr){return sum+arr},0)
+   }
+   exercise();
+   console.log(sumAll([1, 2, 3, 4]));
+   console.log(sumAll([]));
+   console.log(sumAll([5]));
 // console.log(sumAll([1, 2, 3, 4]));
 // TEST 1:  sumAll([1, 2, 3, 4])  ->  10
 // TEST 2:  sumAll([])            ->  0
@@ -31,7 +53,15 @@
 // ----- 3. Biggest number -----
 // Write `maxOf(arr)` (numbers) that RETURNS the largest item.
 // your code here
-
+   function maxOf(arr)
+   {
+    let total = arr.sort(function(a,b){return b - a})
+    return total[0]
+   }
+   exercise();
+   console.log(maxOf([3, 9, 5]));
+   console.log(maxOf([-1, -5, -2]));
+   console.log(maxOf([7]));
 // console.log(maxOf([3, 9, 5]));
 // TEST 1:  maxOf([3, 9, 5])      ->  9
 // TEST 2:  maxOf([-1, -5, -2])   ->  -1
@@ -40,7 +70,16 @@
 // ----- 4. Count occurrences -----
 // Write `countOf(arr, target)` that RETURNS how many items equal target.
 // your code here
-
+   function countOF(arr,target)
+   {
+      return arr.filter(function(arr){
+         return (arr === target).length
+      })
+   }
+   exercise();
+   console.log(countOf([1, 2, 2, 3, 2], 2));
+   console.log(countOf(["a", "b", "a"], "a"));
+   console.log(countOf([1, 2, 3], 9));
 // console.log(countOf([1, 2, 2, 3, 2], 2));
 // TEST 1:  countOf([1, 2, 2, 3, 2], 2)        ->  3
 // TEST 2:  countOf(["a", "b", "a"], "a")      ->  2

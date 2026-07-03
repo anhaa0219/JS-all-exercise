@@ -9,26 +9,21 @@
    Each exercise: 3 TEST CASES, INPUT -> EXACT RETURN value.
    ============================================================ */
 
-
-
-
-
-   let exerciseNum5 = 1;
+let exerciseNum5 = 1;
 function exercise() {
-  console.log("=========Дасгал-3========= : " + exerciseNum5);
+  console.log("=========Дасгал-5========= : " + exerciseNum5);
   exerciseNum5++;
 }
 // ----- 1. Shout it -----
 // Write `shout(text)` that RETURNS text in ALL CAPS.
 // your code here
-   function shout(text)
-   {
-      return text.toUpperCase()
-   }
-   exercise();
-   console.log(shout("hi"));
-   console.log(shout("Code"));
-   console.log(shout("a"));
+function shout(text) {
+  return text.toUpperCase();
+}
+exercise();
+console.log(shout("hi"));
+console.log(shout("Code"));
+console.log(shout("a"));
 // console.log(shout("hi"));
 // TEST 1:  shout("hi")     ->  "HI"
 // TEST 2:  shout("Code")   ->  "CODE"
@@ -37,7 +32,13 @@ function exercise() {
 // ----- 2. First letter -----
 // Write `firstLetter(word)` that RETURNS the character at index 0.
 // your code here
-
+function firstLetter(word) {
+  return word[0];
+}
+exercise();
+console.log(firstLetter("hello"));
+console.log(firstLetter("Zebra"));
+console.log(firstLetter("x"));
 // console.log(firstLetter("hello"));
 // TEST 1:  firstLetter("hello")  ->  "h"
 // TEST 2:  firstLetter("Zebra")  ->  "Z"
@@ -46,7 +47,14 @@ function exercise() {
 // ----- 3. Last letter -----
 // Write `lastLetter(word)` that RETURNS the last character of any length word.
 // your code here
-
+function lastLetter(word) {
+  let result = word.length;
+  return word[result - 1];
+}
+exercise();
+console.log(lastLetter("hello"));
+console.log(lastLetter("cat"));
+console.log(lastLetter("z"));
 // console.log(lastLetter("hello"));
 // TEST 1:  lastLetter("hello")  ->  "o"
 // TEST 2:  lastLetter("cat")    ->  "t"
@@ -56,7 +64,15 @@ function exercise() {
 // Write `initials(first, last)` that RETURNS the two first letters,
 // uppercased, joined with a dot: "M.J".
 // your code here
-
+function initials(first, last) {
+  let result = first[0];
+  let result1 = last[0];
+  return result.toUpperCase() + "." + result1.toUpperCase();
+}
+exercise();
+console.log(initials("maria", "jones"));
+console.log(initials("sam", "lee"));
+console.log(initials("a", "b"));
 // console.log(initials("maria", "jones"));
 // TEST 1:  initials("maria", "jones")  ->  "M.J"
 // TEST 2:  initials("sam", "lee")      ->  "S.L"
@@ -66,7 +82,18 @@ function exercise() {
 // Write `capitalize(word)` that RETURNS the word with the first letter
 // uppercased and the rest unchanged.
 // your code here
+   function capitalize(word)
+   {
+      
+      let result = word[0].toUpperCase()
+      let result2 = word.slice(1,word.length)
+      return result + result2
 
+   }
+   exercise();
+   console.log(capitalize("maria"));
+   console.log(capitalize("code"));
+   console.log(capitalize("x"));
 // console.log(capitalize("maria"));
 // TEST 1:  capitalize("maria")  ->  "Maria"
 // TEST 2:  capitalize("code")   ->  "Code"
@@ -75,7 +102,20 @@ function exercise() {
 // ----- 6. Looks like an email -----
 // Write `isEmail(text)` that RETURNS true when text includes "@", else false.
 // your code here
-
+   function isEmail(text)
+   {
+      if(text.includes("@"))
+         {
+            return true
+         } 
+         else {
+            return false
+         }
+   }
+   exercise();
+   console.log(isEmail("sam@mail.com"));
+   console.log(isEmail("sam.com"));
+   console.log(isEmail("@"));
 // console.log(isEmail("sam@mail.com"));
 // TEST 1:  isEmail("sam@mail.com")  ->  true
 // TEST 2:  isEmail("sam.com")       ->  false
@@ -85,7 +125,20 @@ function exercise() {
 // Write `validUsername(name)` that RETURNS "Valid" when length is >= 3
 // AND <= 15, otherwise "Invalid".
 // your code here
-
+   function validUsername(name)
+   {
+      if(name.length >=3 && name.length <=15)
+      {
+         return "Valid"
+      }
+      else {
+         return "Invalid"
+      }
+   }
+   exercise();
+   console.log(validUsername("jordan"));
+   console.log(validUsername("jo"));
+   console.log(validUsername("a"));
 // console.log(validUsername("jordan"));
 // TEST 1:  validUsername("jordan")  ->  "Valid"
 // TEST 2:  validUsername("jo")      ->  "Invalid"
@@ -94,7 +147,14 @@ function exercise() {
 // ----- 8. Area code -----
 // Write `areaCode(phone)` (10-char string) that RETURNS the first 3 chars.
 // your code here
-
+   function areaCode(phone)
+   {
+      return phone.slice(0,3)
+   }
+   exercise();
+   console.log(areaCode("5551234567"));
+   console.log(areaCode("2129998888"));
+   console.log(areaCode("0000000000"));
 // console.log(areaCode("5551234567"));
 // TEST 1:  areaCode("5551234567")  ->  "555"
 // TEST 2:  areaCode("2129998888")  ->  "212"
@@ -103,7 +163,21 @@ function exercise() {
 // ----- 9. Same word ignoring case -----
 // Write `sameWord(a, b)` that RETURNS true when a and b match ignoring case.
 // your code here
-
+   function sameWord(a,b)
+   {
+      if (a.toUpperCase() === b.toUpperCase())
+      {
+         return true
+      }
+      else 
+      {
+         return false 
+      }
+   }
+   exercise();
+   console.log(sameWord("Hello", "hello"));
+   console.log(sameWord("cat", "dog"));
+   console.log(sameWord("ABC", "abc"));
 // console.log(sameWord("Hello", "hello"));
 // TEST 1:  sameWord("Hello", "hello")  ->  true
 // TEST 2:  sameWord("cat", "dog")      ->  false
@@ -113,7 +187,15 @@ function exercise() {
 // Write `cleanLength(raw)` that trims the spaces off both ends and RETURNS
 // the length of what is left.
 // your code here
-
+   function cleanLength(raw)
+   {
+      let result = raw.trim()
+      return result.length
+   }
+   exercise();
+   console.log(cleanLength("  hi  "));
+   console.log(cleanLength("  hello  "));
+   console.log(cleanLength("x"));
 // console.log(cleanLength("  hi  "));
 // TEST 1:  cleanLength("  hi  ")      ->  2
 // TEST 2:  cleanLength("  hello   ")  ->  5
@@ -123,7 +205,21 @@ function exercise() {
 // Write `padClock(minute)` (0-59 number). RETURN a 2-char string, adding a
 // leading "0" when it is a single digit: 5 -> "05", 42 -> "42".
 // your code here
-
+   function padClock(minute)
+   {
+      if(minute < 10)
+      {
+         return String("0" + minute)
+      }
+      else
+      {
+         return String(minute)
+      }
+   }
+   exercise();
+   console.log(padClock(5));
+   console.log(padClock(42));
+   console.log(padClock(0));
 // console.log(padClock(5));
 // TEST 1:  padClock(5)   ->  "05"
 // TEST 2:  padClock(42)  ->  "42"
@@ -133,7 +229,17 @@ function exercise() {
 // Write `priceTag(cents)` (3+ digit whole number). RETURN "$D.CC" where CC
 // is the last 2 digits and D is the rest: 150 -> "$1.50", 905 -> "$9.05".
 // your code here
-
+   function priceTag(cents)
+   {
+      let result = String(cents)
+      let first = result.slice(0,-2)
+      let last = result.slice(-2)
+      return "$"+first+"."+last
+   }
+   exercise();
+   console.log(priceTag(150));
+   console.log(priceTag(905));
+   console.log(priceTag(1299));
 // console.log(priceTag(150));
 // TEST 1:  priceTag(150)  ->  "$1.50"
 // TEST 2:  priceTag(905)  ->  "$9.05"
