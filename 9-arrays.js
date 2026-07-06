@@ -13,22 +13,21 @@
 
 
 
-   let exerciseNum9 = 1;
+let exerciseNum9 = 1;
 function exercise() {
-  console.log("=========Дасгал-8========= : " + exerciseNum9);
-  exerciseNum9++;
+   console.log("=========Дасгал-9========= : " + exerciseNum9);
+   exerciseNum9++;
 }
 // ----- 1. First item -----
 // Write `firstItem(arr)` that RETURNS the item at index 0.
 // your code here
-   function firstItem(arr)
-   {
-      return arr[0];
-   }
-   exercise();
-   console.log(firstItem([10, 20, 30]));
-   console.log(firstItem(["a", "b"]));
-   console.log(firstItem([7]));
+function firstItem(arr) {
+   return arr[0];
+}
+exercise();
+console.log(firstItem([10, 20, 30]));
+console.log(firstItem(["a", "b"]));
+console.log(firstItem([7]));
 // console.log(firstItem([10, 20, 30]));
 // TEST 1:  firstItem([10, 20, 30])  ->  10
 // TEST 2:  firstItem(["a", "b"])    ->  "a"
@@ -37,14 +36,13 @@ function exercise() {
 // ----- 2. Sum all -----
 // Write `sumAll(arr)` (numbers) that RETURNS the total of every item.
 // your code here
-   function sumAll(arr)
-   {
-      return arr.reduce(function (sum,arr){return sum+arr},0)
-   }
-   exercise();
-   console.log(sumAll([1, 2, 3, 4]));
-   console.log(sumAll([]));
-   console.log(sumAll([5]));
+function sumAll(arr) {
+   return arr.reduce(function (sum, arr) { return sum + arr }, 0)
+}
+exercise();
+console.log(sumAll([1, 2, 3, 4]));
+console.log(sumAll([]));
+console.log(sumAll([5]));
 // console.log(sumAll([1, 2, 3, 4]));
 // TEST 1:  sumAll([1, 2, 3, 4])  ->  10
 // TEST 2:  sumAll([])            ->  0
@@ -53,15 +51,14 @@ function exercise() {
 // ----- 3. Biggest number -----
 // Write `maxOf(arr)` (numbers) that RETURNS the largest item.
 // your code here
-   function maxOf(arr)
-   {
-    let total = arr.sort(function(a,b){return b - a})
-    return total[0]
-   }
-   exercise();
-   console.log(maxOf([3, 9, 5]));
-   console.log(maxOf([-1, -5, -2]));
-   console.log(maxOf([7]));
+function maxOf(arr) {
+   let total = arr.sort(function (a, b) { return b - a })
+   return total[0]
+}
+exercise();
+console.log(maxOf([3, 9, 5]));
+console.log(maxOf([-1, -5, -2]));
+console.log(maxOf([7]));
 // console.log(maxOf([3, 9, 5]));
 // TEST 1:  maxOf([3, 9, 5])      ->  9
 // TEST 2:  maxOf([-1, -5, -2])   ->  -1
@@ -70,16 +67,15 @@ function exercise() {
 // ----- 4. Count occurrences -----
 // Write `countOf(arr, target)` that RETURNS how many items equal target.
 // your code here
-   function countOF(arr,target)
-   {
-      return arr.filter(function(arr){
-         return (arr === target).length
-      })
-   }
-   exercise();
-   console.log(countOf([1, 2, 2, 3, 2], 2));
-   console.log(countOf(["a", "b", "a"], "a"));
-   console.log(countOf([1, 2, 3], 9));
+function countOf(arr, target) {
+   return arr.filter(function (item) {
+      return item === target;
+   }).length;
+}
+exercise();
+console.log(countOf([1, 2, 2, 3, 2], 2));
+console.log(countOf(["a", "b", "a"], "a"));
+console.log(countOf([1, 2, 3], 9));
 // console.log(countOf([1, 2, 2, 3, 2], 2));
 // TEST 1:  countOf([1, 2, 2, 3, 2], 2)        ->  3
 // TEST 2:  countOf(["a", "b", "a"], "a")      ->  2
@@ -88,7 +84,14 @@ function exercise() {
 // ----- 5. Add to end -----
 // Write `append(arr, item)` that pushes item and RETURNS arr.
 // your code here
-
+function append(arr, item) {
+   arr.push(item);
+   return arr
+}
+exercise();
+console.log(append([1, 2], 3));
+console.log(append([], "hi").length);
+console.log(append(["a"], "b"));
 // console.log(append([1, 2], 3));
 // TEST 1:  append([1, 2], 3)          ->  [1, 2, 3]
 // TEST 2:  append([], "hi").length    ->  1
@@ -97,7 +100,14 @@ function exercise() {
 // ----- 6. Remove first -----
 // Write `removeFirst(arr)` that shifts off the first item and RETURNS arr.
 // your code here
-
+function removeFirst(arr) {
+   arr.shift();
+   return arr
+}
+exercise();
+console.log(removeFirst([1, 2, 3]));
+console.log(removeFirst([9]).length);
+console.log(removeFirst(["a", "b", "c"]));
 // console.log(removeFirst([1, 2, 3]));
 // TEST 1:  removeFirst([1, 2, 3])        ->  [2, 3]
 // TEST 2:  removeFirst([9]).length       ->  0
@@ -106,7 +116,13 @@ function exercise() {
 // ----- 7. Contains -----
 // Write `contains(arr, item)` that RETURNS true when item is in arr.
 // your code here
-
+function contains(arr, item) {
+   return arr.includes(item);
+}
+exercise();
+console.log(contains(["cat", "dog"], "dog"));
+console.log(contains([1, 2, 3], 9));
+console.log(contains([], "x"));
 // console.log(contains(["cat", "dog"], "dog"));
 // TEST 1:  contains(["cat", "dog"], "dog")   ->  true
 // TEST 2:  contains([1, 2, 3], 9)            ->  false
@@ -115,7 +131,13 @@ function exercise() {
 // ----- 8. Count even numbers -----
 // Write `countEven(arr)` (numbers) that RETURNS how many items are even.
 // your code here
-
+function countEven(arr) {
+   return arr.filter(num => num % 2 === 0).length;
+}
+exercise();
+console.log(countEven([1, 2, 3, 4, 6]));
+console.log(countEven([1, 2, 5]));
+console.log(countEven([2, 4]));
 // console.log(countEven([1, 2, 3, 4, 6]));
 // TEST 1:  countEven([1, 2, 3, 4, 6])  ->  3
 // TEST 2:  countEven([1, 3, 5])        ->  0
@@ -125,7 +147,17 @@ function exercise() {
 // Write `dashJoin(arr)` that RETURNS the items joined into one string with
 // "-" between them, built with a loop. dashJoin(["a","b","c"]) -> "a-b-c".
 // your code here
-
+function dashJoin(arr) {
+   let result = "";
+   let dash = "-"
+   return arr.map(function (arr) {
+      return result = result + dash + arr
+   })
+}
+exercise();
+console.log(dashJoin(["a", "b", "c"]));
+console.log(dashJoin(["one"]));
+console.log(dashJoin([1, 2]));
 // console.log(dashJoin(["a", "b", "c"]));
 // TEST 1:  dashJoin(["a", "b", "c"])  ->  "a-b-c"
 // TEST 2:  dashJoin(["one"])          ->  "one"
@@ -134,7 +166,17 @@ function exercise() {
 // ----- 10. Average -----
 // Write `average(arr)` (numbers) that RETURNS the mean of the items.
 // your code here
-
+function average(arr) {
+   let result = arr.reduce(function (sum, arr) {
+      return sum + arr
+   })
+   let lent = arr.length
+   return result / lent
+}
+exercise();
+console.log(average([2, 4, 6]));
+console.log(average([10, 20]));
+console.log(average([5]));
 // console.log(average([2, 4, 6]));
 // TEST 1:  average([2, 4, 6])    ->  4
 // TEST 2:  average([10, 20])     ->  15
@@ -144,7 +186,13 @@ function exercise() {
 // Write `reverseArr(arr)` that RETURNS a NEW array with the items reversed.
 // Do not change the original.
 // your code here
-
+function reverseArr(arr) {
+   return [...arr].reverse();
+}
+exercise();
+console.log(reverseArr([1, 2, 3]));
+console.log(reverseArr(["a", "b"]));
+console.log(reverseArr([7]));
 // console.log(reverseArr([1, 2, 3]));
 // TEST 1:  reverseArr([1, 2, 3])        ->  [3, 2, 1]
 // TEST 2:  reverseArr(["a", "b"])       ->  ["b", "a"]
@@ -154,7 +202,15 @@ function exercise() {
 // Write `evensOnly(arr)` that RETURNS a NEW array with only the even numbers,
 // in the same order.
 // your code here
-
+function evensOnly(arr) {
+   return [...arr].filter(function (arr) {
+      return arr % 2 === 0
+   })
+}
+exercise();
+console.log(evensOnly([1, 2, 3, 4, 5, 6]));
+console.log(evensOnly([1, 3, 5]));
+console.log(evensOnly([2, 4]));
 // console.log(evensOnly([1, 2, 3, 4, 5, 6]));
 // TEST 1:  evensOnly([1, 2, 3, 4, 5, 6])  ->  [2, 4, 6]
 // TEST 2:  evensOnly([1, 3, 5])           ->  []

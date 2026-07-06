@@ -20,6 +20,14 @@
    leans on a method from the one before.
    ============================================================ */
 
+
+
+
+let exerciseNum11 = 1;
+function exercise() {
+  console.log("=========Дасгал-10========= : " + exerciseNum11);
+  exerciseNum11++;
+}
 // population in millions, area in km^2
 const countries = [
   { name: "Nigeria", capital: "Abuja", continent: "Africa", population: 223.8, area: 923768, landlocked: false },
@@ -134,6 +142,10 @@ const countries = [
 function countCountries(db) {
   return db.length;
 }
+exercise();
+console.log(countCountries(countries));
+console.log(countCountries([]));
+console.log(countCountries([countries[0]]));
 //sconsole.log(countCountries(countries)); // 100
 // TEST 1:  countCountries(countries)        ->  100
 // TEST 2:  countCountries([])               ->  0
@@ -142,7 +154,15 @@ function countCountries(db) {
 // ----- 2. map — every name -----
 // Write `allNames(db)` -> array of just the name strings.
 // your code here
-
+function allNames(db) {
+  return db.map(function (db) {
+    return db.name;
+  });
+}
+exercise();
+console.log(allNames(countries)[0]);
+console.log(allNames(countries)[99]);
+console.log(allNames(countries).length);
 // console.log(allNames(countries)[0]);
 // TEST 1:  allNames(countries)[0]       ->  "Nigeria"
 // TEST 2:  allNames(countries)[99]      ->  "Solomon Islands"
@@ -151,7 +171,16 @@ function countCountries(db) {
 // ----- 3. map — every capital -----
 // Write `allCapitals(db)` -> array of just the capital strings.
 // your code here
-
+function allCapitals(db) {
+  return db.map(function (db) {
+    return db.capital
+  });
+  exercise();
+}
+exercise();
+console.log(allCapitals(countries)[0]);
+console.log(allCapitals(countries).length);
+console.log(allCapitals([countries[25]])[0]);
 // console.log(allCapitals(countries)[0]);
 // TEST 1:  allCapitals(countries)[0]      ->  "Abuja"
 // TEST 2:  allCapitals(countries).length  ->  100
@@ -160,7 +189,15 @@ function countCountries(db) {
 // ----- 4. filter — by continent -----
 // Write `byContinent(db, continent)` -> array of countries on that continent.
 // your code here
-
+function byContinent(db, continent) {
+  return db.filter(function (db) {
+    return db.continent === continent;
+  });
+}
+exercise();
+console.log(byContinent(countries, "Asia").length);
+console.log(byContinent(countries, "Oceania").length);
+console.log(byContinent(countries, "Antarctica").length);
 // console.log(byContinent(countries, "Asia").length);
 // TEST 1:  byContinent(countries, "Asia").length      ->  25
 // TEST 2:  byContinent(countries, "Oceania").length   ->  5
@@ -169,7 +206,15 @@ function countCountries(db) {
 // ----- 5. filter — boolean field -----
 // Write `landlockedOnly(db)` -> array of countries where landlocked is true.
 // your code here
-
+function landlockedOnly(db) {
+  return db.filter(function (db) {
+    return db.landlocked === true;
+  });
+}
+exercise();
+console.log(landlockedOnly(countries).length);
+console.log(landlockedOnly(countries).every(function (x) { return x.landlocked }));
+console.log(landlockedOnly([countries[0]]).length);
 // console.log(landlockedOnly(countries).length);
 // TEST 1:  landlockedOnly(countries).length                       ->  21
 // TEST 2:  landlockedOnly(countries).every(x => x.landlocked)     ->  true
@@ -178,7 +223,15 @@ function countCountries(db) {
 // ----- 6. filter — numeric threshold -----
 // Write `biggerThan(db, millions)` -> countries with population > millions.
 // your code here
-
+function biggerThan(db, millions) {
+    return db.filter(function(db) {
+        return db.population > millions;
+    });
+}
+exercise();
+console.log(biggerThan(countries, 100).length);
+console.log(biggerThan(countries, 200).length);
+console.log(biggerThan(countries, 5000).length);
 // console.log(biggerThan(countries, 100).length);
 // TEST 1:  biggerThan(countries, 100).length   ->  15
 // TEST 2:  biggerThan(countries, 200).length   ->  7

@@ -73,50 +73,45 @@ exercise();
 console.log(setPrice({ name: "pen" }, 3));
 console.log(setPrice({ price: 1 }, 9));
 console.log(setPrice({ name: "x" }, 0));
-// console.log(setPrice({ name: "pen" }, 3));
-// TEST 1:  setPrice({ name: "pen" }, 3).price  ->  3
-// TEST 2:  setPrice({ price: 1 }, 9).price     ->  9
-// TEST 3:  setPrice({ name: "x" }, 0).price    ->  0
+// ----- 4. Set price -----
+function setPrice(obj, price) {
+  obj.price = price;
+  return obj;
+}
+exercise();
+console.log(setPrice({ name: "pen" }, 3).price); // 3
+console.log(setPrice({ price: 1 }, 9).price);    // 9
+console.log(setPrice({ name: "x" }, 0).price);   // 0
+
 
 // ----- 5. Has key? -----
-// Write `hasKey(obj, key)` that RETURNS true when key exists in obj.
-// your code here
-function hasKey(obj, key) {}
-exercise();
-console.log(hasKey({ a: 1 }, "a"));
-console.log(hasKey({ a: 1 }, "b"));
-console.log(hasKey({ name: "x" }, "name"));
-// console.log(hasKey({ a: 1 }, "a"));
-// TEST 1:  hasKey({ a: 1 }, "a")        ->  true
-// TEST 2:  hasKey({ a: 1 }, "b")        ->  false
-// TEST 3:  hasKey({ name: "x" }, "name") ->  true
-
-// ----- 6. Remove a key (mutate) -----
-// Write `removeKey(obj, key)` that deletes key from obj and RETURNS obj.
-// your code here
-function removeKey(obj, key) {}
+function hasKey(obj, key) {
+  return key in obj;
+}
 exercise();
 
-// console.log("b" in removeKey({ a: 1, b: 2 }, "b"));
-// console.log("a" in removeKey({ a: 1, b: 2 }, "b"));
-// console.log(removeKey({ x: 9 }, "x").x);
-// console.log(removeKey({ a: 1, b: 2 }, "b"));
-// TEST 1:  "b" in removeKey({ a: 1, b: 2 }, "b")  ->  false
-// TEST 2:  "a" in removeKey({ a: 1, b: 2 }, "b")  ->  true
-// TEST 3:  removeKey({ x: 9 }, "x").x             ->  undefined
+console.log(hasKey({ a: 1 }, "a"));        // true
+console.log(hasKey({ a: 1 }, "b"));        // false
+console.log(hasKey({ name: "x" }, "name")); // true
+
+function removeKey(obj, key) {
+  delete obj[key];
+  return obj;
+}
+exercise();
+console.log("b" in removeKey({ a: 1, b: 2 }, "b")); // false
+console.log("a" in removeKey({ a: 1, b: 2 }, "b")); // true
+console.log(removeKey({ x: 9 }, "x").x);            // undefined
+
 
 // ----- 7. Count the keys -----
-// Write `keyCount(obj)` that RETURNS how many keys obj has.
-// your code here
-function keyCount(obj) {}
+function keyCount(obj) {
+  return Object.keys(obj).length;
+}
 exercise();
-console.log(keyCount({ a: 1, b: 2, c: 3 }));
-console.log(keyCount({}));
-console.log(keyCount({ only: true }));
-// console.log(keyCount({ a: 1, b: 2, c: 3 }));
-// TEST 1:  keyCount({ a: 1, b: 2, c: 3 })  ->  3
-// TEST 2:  keyCount({})                    ->  0
-// TEST 3:  keyCount({ only: true })        ->  1
+console.log(keyCount({ a: 1, b: 2, c: 3 })); // 3
+console.log(keyCount({}));                   // 0
+console.log(keyCount({ only: true }));       // 1
 
 // ----- 8. Sum the values -----
 // Write `sumValues(obj)` (all values are numbers) that RETURNS their total.
@@ -140,10 +135,9 @@ console.log(sumValues({ only: 7 }));
 // Write `merge(a, b)` that RETURNS a NEW object with both, b winning on
 // shared keys. Do not change a or b.
 // your code here
-   function merge(a,b)
-   {
-
-   }
+   function merge(a, b) {
+    return { ...a, ...b };
+}
    exercise();
    console.log(merge({ a: 1 }, { b: 2 }).b);
    console.log(merge({ a: 1 }, { b: 2 }).a);
@@ -157,14 +151,17 @@ console.log(sumValues({ only: 7 }));
 // Write `topKey(scores)` (values are numbers) that RETURNS the key with the
 // biggest value.
 // your code here
-   function topKey(scores)
-   {
-
-   }
-   exercise();
-   console.log(topKey({ sam: 5, ada: 9, bo: 3 }));
-   console.log(topKey({ a:1,b:2}));
-   console.log(topKey({ only:7 }));
+   function topKey(scores) {
+    let highestKey = "";
+    let highestValue = -Infinity;
+    for (let key in scores) {
+        if (scores[key] > highestValue) {
+            highestValue = scores[key];
+            highestKey = key;
+        }
+    }
+    return highestKey;
+}
 // console.log(topKey({ sam: 5, ada: 9, bo: 3 }));
 // TEST 1:  topKey({ sam: 5, ada: 9, bo: 3 })  ->  "ada"
 // TEST 2:  topKey({ a: 1, b: 2 })             ->  "b"
